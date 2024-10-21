@@ -1,0 +1,23 @@
+
+<table border=1>
+<tr>
+ <td> ID</td>
+ <td> Username</td>
+ <td>Email</td>
+  <td>nbbooks</td>
+  <td>Details</td>
+</tr>
+{% for author in list %}
+<tr>
+ <td>{{author.id}} </td>
+ <td>{{author.username | capitalize }}</td>
+ <td>{{author.emailadress  }}</td>
+ <td>{{author.nbbooks }}</td>
+ <td><a href="{{ path('author_details', {'id':author.id}) }}" > Author Details </a></td>
+</tr>
+{% endfor %}
+
+</table>
+
+
+

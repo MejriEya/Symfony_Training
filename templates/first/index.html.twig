@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FirstController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ first_name }}! ✅</h1>
+   {{'Test string'}}
+   <br>
+   {% set pi = 3.14 %}
+   {{ pi }}
+   <br>
+   {% set T=[1,2,3] %}
+   {{ T[0] ~ T[1]}}
+   <br>
+   {% if 'Rana' starts with 'R' %}
+   <p>Starts with letterR </p>
+   {% endif %}
+   <br>
+    {% if 10  not in T %}
+     <p>10 is missing </p>
+     {% elseif 3 in T %}
+     <p> 3 exists </p>
+     {% else %}
+     <p>nothing</p>
+   {% endif %}
+   <br>
+    {% for x in T%}
+    {{ x }}
+   {% endfor %}
+   <br>
+    {% for x in range (0, 9) %}
+    {{ x }}
+   {% endfor %}
+   <br>
+   {{ 'yassine' | capitalize }}
+   <br>
+   {{ 'yassine' | upper }}
+   <br>
+   {{ 'FARAH' | lower}}
+   <br>
+   {{ 'Ahla farah winek labess ' | trim | upper }}
+   <br>
+    {{ 'now' | date_modify('+1 day')|date('Y/M/d') }}
+    <br>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code>C:/Symfony projects/firstproject/src/Controller/FirstController.php</code></li>
+        <li>Your template at <code>C:/Symfony projects/firstproject/templates/first/index.html.twig</code></li>
+    </ul>
+</div>
+{% endblock %}

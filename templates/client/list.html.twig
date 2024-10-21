@@ -1,0 +1,23 @@
+<table border=1>
+<tr>
+ <td> ID</td>
+ <td>NOM</td>
+ <td>PRENOM</td>
+  <td>TEL</td>
+  <td>E-MAIL</td>
+</tr>
+{% for client in list %}
+<tr>
+ <td>{{client.id}} </td>
+ <td>{{client.nom | capitalize }}</td>
+ <td>{{client.prenom  }}</td>
+ <td>{{client.tel }}</td>
+ <td>{{client.email }}</td>
+ 
+</tr>
+{% endfor %}
+
+</table>
+
+
+

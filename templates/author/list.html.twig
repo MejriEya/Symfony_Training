@@ -1,0 +1,23 @@
+{% if authors is defined and authors is not empty  %}
+<h1>Author's number = {{ authors | length }}</h1>
+
+<table border=1>
+<tr>
+ <td> ID</td>
+ <td> Username</td>
+ <td>Picture</td>
+</tr>
+{% set total = 0%}
+{% for author in authors %}
+{% set total = total + author.nb_books %}
+<tr>
+ <td>{{ author.id }} </td>
+ <td>{{author.username | capitalize }}</td>
+ <td><img src="{{asset(author.picture) }}" alt="Author Picture"></td>
+</tr>
+{% endfor %}
+</table>
+<h1> Total books = {{ total }} </h1>
+{% else %}
+<h1> Authors is not defined </h1>
+{% endif %}
